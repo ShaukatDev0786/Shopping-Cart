@@ -47,4 +47,11 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  gem "pry-byebug"
+end
+
+group :development do
+  # Injects schema comments (column names, types) directly into your model files
+  gem "annotaterb"
 end

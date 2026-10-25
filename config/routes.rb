@@ -11,6 +11,11 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :products, only: %i[index show]
+
+      # Create a cart and expose the endpoint for adding items to it.
+      resources :carts, only: %i[create show], param: :token do
+        resources :items, controller: "cart_items", only: %i[create update destroy]
+      end
     end
   end
 end
