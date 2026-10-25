@@ -1,5 +1,5 @@
 class Api::V1::ProductsController < ApplicationController
-	def index
+  def index
     products = Product.active.includes(:category)
 
     render json: products.as_json(
